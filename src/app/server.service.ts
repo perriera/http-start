@@ -11,7 +11,7 @@ export class ServerService {
 
   storeServers(servers: any[]) {
     const headers = new Headers({ 'Content-Type': 'application/json' });
-    return this.http.post(this.url, servers, { headers: headers });
+    return this.http.put(this.url, servers, { headers: headers });
   }
 
   getServers() {
