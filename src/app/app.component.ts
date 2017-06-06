@@ -9,6 +9,8 @@ import { Response } from '@angular/http';
 })
 export class AppComponent {
 
+  appName = this.serverService.getAppName();
+
   servers = [
     {
       name: 'Testserver',

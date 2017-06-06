@@ -6,7 +6,8 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class ServerService {
 
-  url = 'https://udemy-ng-http-26bdc.firebaseio.com/data';
+  url = 'https://udemy-ng-http-26bdc.firebaseio.com/data.json';
+  url2 = 'https://udemy-ng-http-26bdc.firebaseio.com/data/appName.json';
 
   constructor(private http: Http) {
   }
@@ -34,4 +35,12 @@ export class ServerService {
       );
   }
 
+  getAppName() {
+    return this.http.get(this.url2)
+      .map(
+        (response: Response) => {
+          return response.json();
+        }
+      );
+  }
 }
